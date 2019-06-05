@@ -54,12 +54,13 @@
 
     <groupId>org.glassfish.jaxb</groupId>
     <artifactId>jaxb-runtime</artifactId>
-
+    <version>${revision}</version>
     <packaging>jar</packaging>
     <name>JAXB Runtime</name>
     <description>JAXB (JSR 222) Reference Implementation</description>
 
     <properties>
+        <revision>${jaxb-api.version}-assentis-1-SNAPSHOT</revision>
         <findbugs.exclude>${project.basedir}/exclude-runtime.xml</findbugs.exclude>
     </properties>
 
@@ -71,7 +72,7 @@
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>txw2</artifactId>
-            <version>${project.version}</version>
+            <version>${jaxb-api.version}</version>
         </dependency>
         <dependency>
             <groupId>com.sun.istack</groupId>
