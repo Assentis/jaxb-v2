@@ -152,7 +152,7 @@
 						<artifactId>maven-deploy-plugin</artifactId>
 						<configuration>
 							<altDeploymentRepository>
-								dev-azure-com-assentis-maven_plugins::default::https://pkgs.dev.azure.com/assentis/_packaging/3rdParty/maven/v1
+								dev-azure-com-assentis-3rdparty::default::https://pkgs.dev.azure.com/assentis/_packaging/3rdParty/maven/v1
 							</altDeploymentRepository>
 						</configuration>
 					</plugin>
