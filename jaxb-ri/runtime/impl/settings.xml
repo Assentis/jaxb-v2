@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+	<servers>		
+		<server>
+			<id>dev-azure-com-assentis-3rdparty</id>
+			<configuration>
+				<httpHeaders>
+					<property>
+						<name>Authorization</name>
+						<value>Basic ${feed.pat}</value>
+					</property>
+				</httpHeaders>
+			</configuration>
+		</server>		
+	</servers>
+
+	<profiles>
+		<profile>
+			<id>azure</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<repositories>
+				<!-- external repos -->
+				<repository>
+					<id>cefdigital</id>
+					<url>https://ec.europa.eu/cefdigital/artifact/content/repositories/esignaturedss/</url>
+					<releases>
+						<enabled>true</enabled>
+					</releases>
+					<snapshots>
+						<enabled>false</enabled>
+					</snapshots>
+				</repository>
+				<!-- azure repos -->
+				<repository>
+					<id>dev-azure-com-assentis-df-snapshots</id>
+					<url>https://pkgs.dev.azure.com/assentis/_packaging/df-snapshots/maven/v1</url>
+					<releases>
+						<enabled>false</enabled>
+					</releases>
+					<snapshots>
+						<enabled>true</enabled>
+					</snapshots>
+				</repository>
+				<repository>
+					<id>dev-azure-com-assentis-3rdparty</id>
+					<url>https://pkgs.dev.azure.com/assentis/_packaging/3rdParty/maven/v1</url>
+					<releases>
+						<enabled>true</enabled>
+					</releases>
+					<snapshots>
+						<enabled>true</enabled>
+					</snapshots>
+				</repository>
+			</repositories>
+			<pluginRepositories>				
+				<pluginRepository>
+					<id>dev-azure-com-assentis-3rdparty</id>
+					<url>https://pkgs.dev.azure.com/assentis/_packaging/3rdParty/maven/v1</url>
+					<releases>
+						<enabled>true</enabled>
+					</releases>
+					<snapshots>
+						<enabled>true</enabled>
+					</snapshots>
+				</pluginRepository>				
+			</pluginRepositories>
+		</profile>
+	</profiles>
+</settings>
