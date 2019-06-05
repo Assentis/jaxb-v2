@@ -24,7 +24,7 @@ steps:
     testResultsFiles: '**/TEST-*.xml'
     goals: 'deploy'
     mavenFeedAuthenticate: true
-    options: '-B -Drevision=$(patchBaseVersion)-$(Build.SourceBranchName)-SNAPSHOT'
+    options: '-s settings.xml -Dfeed.pat=$(feed.pat) -B -Drevision=$(patchBaseVersion)-$(Build.SourceBranchName)-SNAPSHOT'
     codeCoverageToolOption: 'None'
     sonarQubeRunAnalysis: false
   condition: and(not(startsWith(variables['Build.SourceBranch'], 'refs/pull')),ne(variables['Build.SourceBranch'], 'master'), ne(variables['Build.SourceBranch'], 'refs/heads/jaxb-2_3_1-assentis'))
@@ -43,7 +43,7 @@ steps:
     testResultsFiles: '**/TEST-*.xml'
     goals: 'deploy'
     mavenFeedAuthenticate: true
-    options: '-B -Drevision=$(patchBaseVersion)'
+    options: '-s settings.xml -Dfeed.pat=$(feed.pat) -B -Drevision=$(patchBaseVersion)'
     codeCoverageToolOption: 'None'
     sonarQubeRunAnalysis: false
   condition: eq(variables['Build.SourceBranch'], 'refs/heads/jaxb-2_3_1-assentis')
@@ -61,7 +61,7 @@ steps:
     testResultsFiles: '**/TEST-*.xml'
     goals: 'install'
     mavenFeedAuthenticate: true
-    options: '-B -Drevision=$(patchBaseVersion)-SNAPSHOT'
+    options: '-s settings.xml -Dfeed.pat=$(feed.pat) -B -Drevision=$(patchBaseVersion)-SNAPSHOT'
     codeCoverageToolOption: 'None'
     sonarQubeRunAnalysis: false
   condition: startsWith(variables['Build.SourceBranch'], 'refs/pull')
