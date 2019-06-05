@@ -34,7 +34,7 @@ steps:
 - task: Maven@3
   name: 'Release_Task'
   inputs:
-    mavenPomFile: 'pom.xml'
+    mavenPomFile: 'jaxb-ri/runtime/impl/pom.xml'
     mavenOptions: '-Xmx3072m'
     javaHomeOption: 'JDKVersion'
     jdkVersionOption: '1.11'
@@ -52,7 +52,7 @@ steps:
 - task: Maven@3
   name: 'Pull_Request_Build_Task'
   inputs:
-    mavenPomFile: 'pom.xml'
+    mavenPomFile: 'jaxb-ri/runtime/impl/pom.xml'
     mavenOptions: '-Xmx3072m'
     javaHomeOption: 'JDKVersion'
     jdkVersionOption: '1.11'
