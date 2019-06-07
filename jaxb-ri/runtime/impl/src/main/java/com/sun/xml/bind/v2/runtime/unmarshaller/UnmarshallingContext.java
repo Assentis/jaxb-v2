@@ -326,7 +326,7 @@ public final class UnmarshallingContext extends Coordinator
             assert prev!=null;
             loader = null;
             nil = false;
-            mixed = false;
+            mixed = prev.mixed;
             receiver = null;
             intercepter = null;
             elementDefaultValue = null;
